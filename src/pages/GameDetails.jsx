@@ -16,12 +16,12 @@ const GameDetails = () => {
 
   return (
     <div>
-      <div className="bg-secondary opacity-98 text-white py-20 text-center">
-        <h2 className="text-4xl font-bold capitalize">
+      <div className="bg-secondary text-white py-12 md:py-16 lg:py-20 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase">
           Game <span className="text-primary">details</span> 
         </h2>
       </div>
-      <div className="w-10/12 mx-auto my-10">
+      <div className="w-11/12 md:w-10/12 lg:w-8/12 mx-auto my-6 md:my-10">
         <GameDetailsCard games={games}></GameDetailsCard>
       </div>
     </div>

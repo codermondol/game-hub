@@ -60,13 +60,13 @@ const Navbar = () => {
 
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-secondary"
+              className="menu menu-sm dropdown-content rounded-box z-[999] mt-3 w-52 p-2 shadow bg-secondary"
             >
               {links}
             </ul>
           </div>
           <a href="/" className="btn btn-ghost text-xl">
-            <img src={logoImg} alt="" />
+            <img className="w-[80px] sm:w-[100px] md:w-[120px]" src={logoImg} alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="flex gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Link to="/profile">
                 {user?.photoURL ? (
                   <img
@@ -88,22 +88,22 @@ const Navbar = () => {
               </Link>
               <button
                 onClick={handleLogOut}
-                className="btn btn-primary hover:bg-white hover:text-primary"
+                className="btn btn-primary btn-sm sm:btn-md hover:bg-white hover:text-primary"
               >
                 Logout
               </button>
             </div>
           ) : (
-            <div className=" flex gap-1">
+            <div className=" flex gap-1 sm:gap-2">
               <a
                 href="/login"
-                className="btn btn-primary hover:bg-white hover:text-primary"
+                className="btn btn-primary btn-sm sm:btn-md hover:bg-white hover:text-primary"
               >
                 Login
               </a>
               <a
                 href="/register"
-                className="btn btn-primary hover:bg-white hover:text-primary"
+                className="btn btn-primary btn-sm sm:btn-md hover:bg-white hover:text-primary"
               >
                 Register
               </a>

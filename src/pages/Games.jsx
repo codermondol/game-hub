@@ -9,6 +9,7 @@ const Games = () => {
 
   return (
     <div>
+      <title>List of All Games</title>
       <div className="bg-secondary opacity-98 text-white py-20 text-center">
         <h2 className="text-4xl font-bold capitalize">
           List of <span className="text-primary">All</span> Games
