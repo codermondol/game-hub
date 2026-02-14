@@ -1,8 +1,14 @@
 import React, { use } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { useNavigate } from "react-router";
 
 const Profile = () => {
   const { user } = use(AuthContext);
+  const navigate = useNavigate()
+
+  const handleUpdateBtn = () => {
+    navigate('/update-profile')
+  }
 
   return (
     <div>
@@ -28,6 +34,7 @@ const Profile = () => {
             <span>{user.email}</span>
           </p>
         </div>
+        <button onClick={handleUpdateBtn}>Update info</button>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../components/Loading";
 import Profile from "../pages/AuthPages/Profile";
+import ForgetPassword from "../pages/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,13 @@ export const router = createBrowserRouter([
       {
         path: '/profile/',
         element: <PrivateRoute><Profile></Profile></PrivateRoute>
+      },
+      {
+        path: '/forget-password',
+        element: <ForgetPassword></ForgetPassword>
+      },
+      {
+        path
       }
     ],
   },

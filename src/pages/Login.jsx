@@ -9,7 +9,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const emailRef = useRef()
 
-  const { loginUser, forgetPassword } = use(AuthContext);
+  const { loginUser } = use(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,18 +43,22 @@ const Login = () => {
 
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
-    if(!email){
-      alert('please enter your email')
-      return;
-    }
-    forgetPassword(email)
-    .then(() => {
-      alert('please check your email');
-    })
-    .catch((error) => {
-    const errorMessage = error.message;
-    console.log(errorMessage)
-  });
+  //   if(!email){
+  //     alert('please enter your email')
+  //     return;
+  //   }
+  //   forgetPassword(email)
+  //   .then(() => {
+  //     alert('please check your email');
+  //   })
+  //   .catch((error) => {
+  //   const errorMessage = error.message;
+  //   console.log(errorMessage)
+  // });
+    navigate('/forget-password', {state: {email}})
+
+
+
   }
 
   return (
