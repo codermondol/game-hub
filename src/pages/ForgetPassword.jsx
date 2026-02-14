@@ -21,8 +21,8 @@ const ForgetPassword = () => {
         // open Gmail in a new tab
         window.open("https://mail.google.com/", "_blank");
       })
-      .catch((err) => {
-        console.error(err);
+      .catch((error) => {
+        console.error(error);
         toast("Failed to send reset email. Try again.");
       });
   };

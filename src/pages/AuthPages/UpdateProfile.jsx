@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const UpdateProfile = () => {
   const { user, updateUserInfo } = useContext(AuthContext);
@@ -7,11 +9,15 @@ const UpdateProfile = () => {
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate()
+
   const handleUpdate = (e) => {
     e.preventDefault();
     updateUserInfo(name, photoURL)
       .then(() => {
         setMessage("Profile updated successfully!");
+        toast("Profile updated successfully!");
+        navigate('/profile');
       })
       .catch((error) => {
         setMessage("Error: " + error.message);

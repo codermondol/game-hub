@@ -25,7 +25,6 @@ const Login = () => {
     loginUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {

@@ -5,7 +5,6 @@ import GameCard from "../components/GameCard";
 const Games = () => {
   const obj = useParams();
   const gameData = useLoaderData();
-  console.log(obj)
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { createContext, useState } from "react";
 import {
@@ -19,7 +19,6 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(loading, user);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -37,12 +36,13 @@ const AuthProvider = ({ children }) => {
   };
 
   const forgetPassword = (email) => {
+    setLoading(true)
     return sendPasswordResetEmail(auth, email);
   };
 
 
   const updateUserInfo = (name, photo) => {
-    setLoading(true);
+    setLoading(true)
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
