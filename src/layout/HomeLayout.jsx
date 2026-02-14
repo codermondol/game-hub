@@ -12,7 +12,7 @@ const HomeLayout = () => {
                 <Navbar></Navbar>
             </header>
             <main>
-              {state == 'loading' ? <Loading></Loading> : <Outlet></Outlet> }  
+              {state == 'loading' ? <Loading></Loading> : <Outlet></Outlet> } 
             </main>
             <footer>
                 <Footer></Footer>
