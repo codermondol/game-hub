@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useLocation } from "react-router";
+import { toast } from "react-toastify";
 
 const ForgetPassword = () => {
     const location = useLocation();
@@ -10,19 +11,19 @@ const ForgetPassword = () => {
   const handleReset = (e) => {
     e.preventDefault();
     if (!email) {
-      alert("Please enter your email");
+      toast("Please enter your email");
       return;
     }
 
     forgetPassword(email)
       .then(() => {
-        alert("Please check your email. Redirecting to Gmail...");
+        toast("Please check your email. Redirecting to Gmail...");
         // open Gmail in a new tab
         window.open("https://mail.google.com/", "_blank");
       })
       .catch((err) => {
         console.error(err);
-        alert("Failed to send reset email. Try again.");
+        toast("Failed to send reset email. Try again.");
       });
   };
 

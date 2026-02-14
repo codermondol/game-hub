@@ -7,7 +7,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const emailRef = useRef()
+  const emailRef = useRef();
 
   const { loginUser } = use(AuthContext);
 
@@ -43,23 +43,8 @@ const Login = () => {
 
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
-  //   if(!email){
-  //     alert('please enter your email')
-  //     return;
-  //   }
-  //   forgetPassword(email)
-  //   .then(() => {
-  //     alert('please check your email');
-  //   })
-  //   .catch((error) => {
-  //   const errorMessage = error.message;
-  //   console.log(errorMessage)
-  // });
-    navigate('/forget-password', {state: {email}})
-
-
-
-  }
+    navigate("/forget-password", { state: { email } });
+  };
 
   return (
     <div>
@@ -92,7 +77,7 @@ const Login = () => {
                       className="input"
                       name="password"
                       placeholder="Password"
-                      onChange={() => setPasswordError('')}
+                      onChange={() => setPasswordError("")}
                       required
                     />
                     <button
@@ -107,7 +92,12 @@ const Login = () => {
                     <p className="text-red-400 text-xs">{passwordError}</p>
                   )}
                   <div>
-                    <a onClick={handleForgetPassword} className="link link-hover">Forgot password?</a>
+                    <a
+                      onClick={handleForgetPassword}
+                      className="link link-hover"
+                    >
+                      Forgot password?
+                    </a>
                   </div>
                   <button className="btn btn-primary mt-4">Login</button>
                 </fieldset>
