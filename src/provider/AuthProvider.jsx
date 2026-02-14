@@ -40,6 +40,7 @@ const AuthProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
 
+
   const updateUserInfo = (name, photo) => {
     setLoading(true);
     return updateProfile(auth.currentUser, {

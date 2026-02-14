@@ -4,11 +4,11 @@ import { useNavigate } from "react-router";
 
 const Profile = () => {
   const { user } = use(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleUpdateBtn = () => {
-    navigate('/update-profile')
-  }
+    navigate("/update-profile");
+  };
 
   return (
     <div>
@@ -30,11 +30,15 @@ const Profile = () => {
             <span>{user.displayName}</span>
           </h2>
           <p className="text-sx">
-            <span className="font-bold">Email:</span>{" "}
-            <span>{user.email}</span>
+            <span className="font-bold">Email:</span> <span>{user.email}</span>
           </p>
         </div>
-        <button onClick={handleUpdateBtn}>Update info</button>
+        <button
+          onClick={handleUpdateBtn}
+          className="mt-4 w-full bg-primary text-white py-3 rounded-lg font-bold cursor-pointer"
+        >
+          Update info
+        </button>
       </div>
     </div>
   );

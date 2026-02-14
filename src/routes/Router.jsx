@@ -12,6 +12,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../components/Loading";
 import Profile from "../pages/AuthPages/Profile";
 import ForgetPassword from "../pages/ForgetPassword";
+import UpdateProfile from "../pages/AuthPages/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -64,7 +65,8 @@ export const router = createBrowserRouter([
         element: <ForgetPassword></ForgetPassword>
       },
       {
-        path
+        path: '/update-profile',
+        element: <UpdateProfile></UpdateProfile>
       }
     ],
   },
