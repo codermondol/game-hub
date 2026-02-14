@@ -1,17 +1,19 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const Register = () => {
-  const { setUser, createUser } = use(AuthContext);
+  const { setUser, createUser, updateUserInfo } = use(AuthContext);
 
   const [nameError, setNameError] = useState("");
   const [photoError, setPhotoError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -63,6 +65,8 @@ const Register = () => {
       .then((userCrresedential) => {
         const user = userCrresedential.user;
         setUser(user);
+        navigate('/profile')
+        return updateUserInfo(name, photo)
       })
       .catch((error) => {
         const errorMessage = error.message;

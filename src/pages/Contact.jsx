@@ -13,7 +13,7 @@ const Contact = () => {
       </div>
       <div className="w-8/12 mx-auto my-20 grid grid-cols-1 md:grid-cols-3 gap-5 font-bold">
         <div className="w-full bg-white shadow-xl p-10 text-center ">
-          <div className="mx-auto m-5 p-3 bg-red-300 w-20 h-20 text-white rounded-full flex items-center justify-center">
+          <div className="mx-auto m-5 p-3 bg-primary w-20 h-20 text-white rounded-full flex items-center justify-center">
             <IoCall className="text-2xl" />
           </div>
           <div className="">
@@ -22,7 +22,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="w-full bg-white shadow-xl p-10 text-center ">
-          <div className="mx-auto m-5 p-3 bg-red-300 w-20 h-20 text-white rounded-full flex items-center justify-center">
+          <div className="mx-auto m-5 p-3 bg-primary w-20 h-20 text-white rounded-full flex items-center justify-center">
             <MdEmail className="text-2xl" />
           </div>
           <div className="">
@@ -31,7 +31,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="w-full bg-white shadow-xl p-10 text-center ">
-          <div className="mx-auto m-5 p-3 bg-red-300 w-20 h-20 text-white rounded-full flex items-center justify-center">
+          <div className="mx-auto m-5 p-3 bg-primary w-20 h-20 text-white rounded-full flex items-center justify-center">
             <FaLocationDot className="text-2xl" />
           </div>
           <div className="">

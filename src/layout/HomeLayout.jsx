@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import { Outlet, useNavigation } from 'react-router';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
 
 const HomeLayout = () => {
     const {state} = useNavigation()
@@ -13,6 +14,9 @@ const HomeLayout = () => {
             <main>
               {state == 'loading' ? <Loading></Loading> : <Outlet></Outlet> }  
             </main>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

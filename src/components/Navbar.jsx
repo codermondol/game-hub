@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import logoImg from "../assets/logo.png";
 import { AuthContext } from "../provider/AuthProvider";
 import userIcon from "../assets/user.png";
@@ -11,10 +11,10 @@ const Navbar = () => {
   const handleLogOut = () => {
     userLogOut()
       .then(() => {
-        alert('logged out successfully')
+        alert("logged out successfully");
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       });
   };
 
@@ -69,18 +69,23 @@ const Navbar = () => {
             <img src={logoImg} alt="" />
           </a>
         </div>
-        <div>{user && user.email}</div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           {user ? (
             <div className="flex gap-3">
-              <img
-                src={userIcon}
-                alt=""
-                className="w-10 h-10 rounded-full mr-2 cursor-pointer"
-              />
+              <Link to="/profile">
+                {user?.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt="user"
+                    className="w-10 h-10 rounded-full"
+                  />
+                ) : (
+                  userIcon
+                )}
+              </Link>
               <button
                 onClick={handleLogOut}
                 className="btn btn-primary hover:bg-white hover:text-primary"

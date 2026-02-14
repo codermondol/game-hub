@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../components/Loading";
+import Profile from "../pages/AuthPages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/profile/',
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       }
     ],
   },
