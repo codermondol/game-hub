@@ -1,7 +1,7 @@
 # Gamehub - A Game Library
 
 **Project Name:** Gamehub - A Game Library  
-**Live URL:** [Add your live URL here]  
+**Live URL:**   [https://gamehublibrary.netlify.app/](https://gamehublibrary.netlify.app/)
 **Purpose:**  
 Gamehub is a React-based game library platform that allows users to explore, browse, and discover games easily. The project aims to provide a sleek, responsive, and interactive interface for gamers to check out game details, ratings, and more.
 
